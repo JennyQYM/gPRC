@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package bank;
+
+// The bank service definition.
+service transaction {
+  rpc MsgDelivery (transaction_request) returns (transaction_reply) {}
+}
+
+// input definition
+message transaction_request {
+  string type = 1;
+  string action = 2;
+  int32 amount = 3;
+}
+
+// output definition
+message transaction_reply {
+  int32 balance = 1;
+}
